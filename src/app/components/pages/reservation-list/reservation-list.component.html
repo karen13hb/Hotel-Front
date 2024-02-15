@@ -1,0 +1,34 @@
+<div class="card">
+    <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Habitacion</th>
+            <th scope="col">Total</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Cancelar</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservacion of reservaciones">
+                <th scope="row">{{ reservacion.id }}</th>
+                <td>{{ reservacion.nombre }}</td>
+                <td>{{ reservacion.celular }}</td>
+                <td>{{ reservacion.habitacion }}</td>
+                <td  [ngClass]="{'text-danger': reservacion.isCancel}">{{ reservacion.precio_total  }}</td>
+                <td>
+                  <button (click)="delete(reservacion.id)" [disabled]="reservacion.isCancel">
+                      <i class="material-icons">delete</i>
+                  </button>
+              </td>
+              <td>
+                  <button (click)="cancel(reservacion.id)" [disabled]="reservacion.isCancel">
+                      <i class="material-icons">cancel</i>
+                  </button>
+              </td>
+              </tr>
+        </tbody>
+    </table>
+</div>

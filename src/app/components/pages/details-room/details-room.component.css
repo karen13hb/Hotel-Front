@@ -1,0 +1,97 @@
+  .slider-gallery{
+    display: flex;
+    margin-top: 2%;
+  }
+  .main-info{
+    margin: 4%;
+    display: flex;
+  }
+  .service ,.details{
+    width: 50%;
+  }
+  .title{
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .services{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .service h4{
+    color: #00624ebe;  
+  }
+  .service-card{
+    width: 20%;
+    border: 1px solid lightgrey;
+    padding: 2%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgb(59, 59, 59);
+  }
+  .service-card i{
+    font-size: xx-large;    
+  }
+  .divider {
+    border: none; 
+    height: 1px; 
+    background-color: #000; 
+    margin: 20px 0; 
+  }
+  .bold{
+    font-weight: bold;
+  }
+  .bold span{
+    font-weight: lighter;
+  }
+  .details{
+    display: flex;
+    justify-content: center;
+  }
+  .card{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 2%;
+  }
+  .card h5{
+    color: #00624ebe;  
+  }
+  .input-card{
+    margin: 2% 0%;
+  }
+  .total-price{
+    border-radius: 5px;
+    margin: 5% 0%;
+    padding: 5% 10%;
+    background-color: gray;
+    color: white;
+  }
+  .send-button{
+    margin-top: 3%;
+  }
+  .table{
+    width: 50%;
+  }
+  .title-icon{
+    display: flex;
+    gap: 10%;
+  }
+  .toast {
+    position: fixed;
+    bottom: 570px;
+    right: 20px;
+    background-color: #3333336e;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  .toast.show {
+    display: block;
+  }
+  

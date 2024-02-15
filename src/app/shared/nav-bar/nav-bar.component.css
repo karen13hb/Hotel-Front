@@ -1,0 +1,38 @@
+  .nav-logo{
+      display: flex;
+  }
+
+  i{
+      font-size: 4rem;
+      color: #00624f;
+  }
+  
+  h1 {
+    display: inline;
+    position: relative;
+    font: 60px Helvetica, Sans-Serif;
+    letter-spacing: -5px;
+    color: #00624ebe;     
+  }
+  
+  h1:after {
+    content: "HotelClub";
+    position: absolute; 
+    left: 4px; 
+    top: 5px;
+    color: #2786cab2;    
+  }
+
+  .container-fluid > * {
+    width: 30%;
+  }
+
+  .container-name{
+    display: flex;
+    justify-content: center;
+  }
+  .nav-v{
+    display: flex;
+    justify-content: end;
+    font-size: large;
+  }

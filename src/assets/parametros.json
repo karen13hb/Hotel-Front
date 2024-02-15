@@ -1,0 +1,18 @@
+{
+  "checkin": "14:00",
+  "checkout": "16:00",
+  "habitaciones": [
+    {
+      "id": 1,
+      "servicios": ["tv", "wifi", "closet"]
+    },
+    {
+      "id": 2,
+      "servicios": ["tv", "wifi", "closet", "bar", "restaurante"]
+    },
+    {
+      "id": 3,
+      "servicios": ["tv", "wifi", "closet", "bar", "restaurante", "piscina"]
+    }
+  ]
+}

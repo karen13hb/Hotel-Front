@@ -1,0 +1,118 @@
+
+<div>
+   <div class="slider-gallery">
+        <div class="col-md-4">
+            <img class="d-block w-100" src="/assets/images/room1.jpg" alt="First slide">
+        </div>
+        <div class="col-md-4">
+            <img class="d-block w-100" src="/assets/images/room2.jpg" alt="Second slide">
+        </div>
+        <div class="col-md-4">
+            <img class="d-block w-100" src="/assets/images/room3.jpg" alt="Third slide">
+        </div>
+   </div>
+
+   <div class="main-info">
+        <div class="service">
+            <h4>{{habitacion_select.type}}</h4>
+            <hr class="divider">
+            <div>
+                <h5 class="title">Servicios</h5>
+
+                <div class="services">
+
+                    <div class="service-card" *ngIf="mostrarServicio('tv')">
+                        <i class="material-icons">tv</i>
+                        <p>Televisor</p>
+                    </div>
+                    <div class="service-card" *ngIf="mostrarServicio('wifi')">
+                        <i class="material-icons">wifi</i>
+                        <p>Wifi</p>
+                    </div>
+                    <div class="service-card" *ngIf="mostrarServicio('closet')">
+                        <i class="material-icons">checkroom</i>
+                        <p>Closet</p>
+                    </div>
+                    <div class="service-card" *ngIf="mostrarServicio('bar')">
+                        <i class="material-icons">local_bar</i>
+                        <p>Bar</p>
+                    </div>
+                    <div class="service-card" *ngIf="mostrarServicio('restaurante')">
+                        <i class="material-icons">restaurant</i>
+                        <p>Restaurante</p>
+                    </div>
+                    <div class="service-card" *ngIf="mostrarServicio('piscina')">
+                        <i class="material-icons">pool</i>
+                        <p>Piscina</p>
+                    </div>                                              
+                </div>
+            </div>
+            <hr class="divider">
+            <div>
+                <h5 class="title">Detalles</h5>
+
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>                      
+                      <td class="bold title-icon"><span><i class="material-icons">logout</i></span>Check-in</td>
+                      <td >Desde {{checkin}}</td>
+                    </tr>
+                    <tr>                      
+                      <td class="bold title-icon"><span><i class="material-icons">login</i></span>Check-out</td>
+                      <td>Hasta {{checkout}}</td>
+                    </tr>
+                    <tr>
+                      <td class="bold title-icon"><span><i class="material-icons">group</i></span>Capacidad</td>
+                      <td>{{habitacion_select.capacidad}} personas</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="details">
+            <form class="card" [formGroup]="formReserva" (ngSubmit)="crearReserva()">                   
+                    <h5>Datos de la reserva</h5>
+                    
+                    <div class="col-12 col-md-8 input-card" > 
+                        <div class="form-group">
+                        <label for="fechaCheckin">Check-in: </label>
+                        <input type="date" id="fechaCheckin" class="form-control" formControlName="fechaCheckin" placeholder="DD/MM/YYYY" >
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 input-card" > 
+                        <div class="form-group">
+                        <label for="fechaCheckout">Check-out: </label>
+                        <input type="date" id="fechaCheckout" class="form-control" formControlName="fechaCheckout" placeholder="DD/MM/YYYY" >
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 input-card">                    
+                        <div class="form-group">
+                            <label for="numCelular">Numero de celular</label>
+                            <input type="text" class="form-control"  formControlName="numCelular">                                          
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 input-card">                    
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" class="form-control" formControlName="name">                    
+                        </div>
+                    </div>
+                    <div class="total-price" *ngIf="showInfo">
+                        Total por  {{total_days}} días : {{total_price}} 
+                    </div>
+
+                    <div class="d-grid gap-2 col-3 mx-auto send-button" *ngIf="showButton" >
+                      <button type="button" class="btn btn-outline-secondary" (click)="calcularTotal()" [disabled]="!formReserva.valid">Calcular</button>
+                    </div> 
+                    <div class="d-grid gap-2 col-3 mx-auto send-button" *ngIf="!showButton">
+                      <button type="submit" class="btn btn-outline-secondary">Reservar</button>
+                    </div>                  
+            </form>
+        </div>
+   </div>
+</div>
+<div class="toast" [ngClass]="{'show': visible}">
+  <div class="toast-body">
+    {{ message }}
+  </div>
+</div>

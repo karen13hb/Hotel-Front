@@ -1,0 +1,20 @@
+.table{
+    margin-bottom: 0%;
+    border-radius: 5px;
+}
+.card{
+    margin: 5%;
+}
+thead{
+    background-color: #00624f;
+    color: white;
+
+}
+
+tr{
+    margin: 0% 2%;
+}
+button{
+    background-color: transparent;
+    border-color: transparent;
+}
